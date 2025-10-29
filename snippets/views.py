@@ -12,10 +12,10 @@ class SnippetViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return Snippet.objects.filter(created_by=self.request.user)
-    
+
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
-    
+
     @action(detail=False, methods=['get'], url_path='overview')
     def overview(self, request):
         snippets = self.get_queryset()
@@ -25,13 +25,14 @@ class SnippetViewSet(viewsets.ModelViewSet):
             "total_snippets": total_count,
             "snippets": serializer.data
         })
-    
+
     def destroy(self, request, *args, **kwargs):
         instance = self.get_object()
         self.perform_destroy(instance)
         remaining = self.get_queryset()
         serializer = self.get_serializer(remaining, many=True)
         return Response(serializer.data)
+
 
 class TagViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Tag.objects.all()

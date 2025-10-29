@@ -28,14 +28,14 @@ class SnippetSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         tags_data = validated_data.pop('tags', [])
-        snippet = Snippet.objects.create(**validated_data)  # remove created_by here
+        snippet = Snippet.objects.create(
+            **validated_data)  # remove created_by here
 
         for tag_title in tags_data:
             tag, _ = Tag.objects.get_or_create(title=tag_title.strip().lower())
             snippet.tags.add(tag)
 
         return snippet
-
 
     def update(self, instance, validated_data):
         tags_data = validated_data.pop('tags', None)
