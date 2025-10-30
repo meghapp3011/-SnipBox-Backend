@@ -39,3 +39,19 @@ It allows users to save short text snippets, organize them with tags, and manage
 
  - python manage.py runserver ( finally run the server)
 
+ ## Deploy with Docker
+   ##  Clone the repository 
+   
+  - git clone https://github.com/meghapp3011/-SnipBox-Backend.git
+  
+  - cd SnipBox-Backend
+  
+  ## Build and start container
+
+    - docker-compose up --build
+
+  ## Stop the container
+
+    - docker-compose down
+     
+
