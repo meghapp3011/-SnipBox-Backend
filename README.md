@@ -23,11 +23,11 @@ It allows users to save short text snippets, organize them with tags, and manage
  
  - source venv/bin/activate (activate virtual env)
 
-  ## installing dependencies
+  ## Installing dependencies
 
  - pip install -r requirements.txt
 
-  ## database migration
+  ## Database migration
 
  - python manage.py makemigrations
 
@@ -35,7 +35,7 @@ It allows users to save short text snippets, organize them with tags, and manage
 
  - python manage.py createsuperuser ( create a super user)
 
- ## run application
+ ## Run application
 
  - python manage.py runserver ( finally run the server)
 
