@@ -35,5 +35,7 @@ It allows users to save short text snippets, organize them with tags, and manage
 
  - python manage.py createsuperuser ( create a super user)
 
+ ## run application
+
  - python manage.py runserver ( finally run the server)
 
