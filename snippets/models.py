@@ -3,6 +3,7 @@ from django.db import models
 from django.conf import settings
 from django.utils import timezone
 
+
 class Tag(models.Model):
     title = models.CharField(max_length=100, unique=True)
 
@@ -11,7 +12,8 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.title
-    
+
+
 class Snippet(models.Model):
     title = models.CharField(max_length=200)
     note = models.TextField()
@@ -21,7 +23,7 @@ class Snippet(models.Model):
         on_delete=models.CASCADE
     )
     tags = models.ManyToManyField(
-        Tag, related_name='snippets', 
+        Tag, related_name='snippets',
         blank=True
     )
     created_at = models.DateTimeField(default=timezone.now)
@@ -32,4 +34,3 @@ class Snippet(models.Model):
 
     def __str__(self):
         return self.title
-    

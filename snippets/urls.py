@@ -7,4 +7,3 @@ router.register(r'snippets', SnippetViewSet, basename='snippet')
 router.register(r'tags', TagViewSet, basename='tag')
 
 urlpatterns = router.urls
-
